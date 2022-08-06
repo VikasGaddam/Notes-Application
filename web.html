@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Application for Saving Notes</title>
+    <script
+      src="https://kit.fontawesome.com/1935d064dd.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="web.css" />
+  </head>
+  <body>
+    
+
+    <header>
+
+        <nav class="navbar fa-facebook navbar-expand-l0 navbar-dark bg-dark">
+            <i><a class="navbar-brand" href="#">Flash Notes</a></i>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+  
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" id="searchTxt" type="searchTxt" placeholder="Search"
+                  aria-label="Search"
+                />
+                <button
+                  class="btn btn-outline-success my-5 my-sm-2"
+                  type="submit"
+                >
+                  Search
+                </button>
+              </form>
+            </div>
+          </nav>
+
+          <!-- Slide Show -->
+<section>
+    <img class="mySlides" src="https://images.unsplash.com/photo-1605256585681-455837661b18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+    style="width:100%">
+    <img class="mySlides" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+    style="width:100%">
+    <img class="mySlides" src="https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+    style="width:100%">
+  </section>
+
+
+  <div class="text-success"></div>
+
+        <hr class="border border-danger border-2 opacity-50" />
+  
+        <i
+          ><figure class="text-center">
+            <blockquote class="blockquote">
+              <p>”About Us”</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+              <b> ”Flash Notes” is an award-winning creative notes app. <cite title="Source Title">The great attention to detail and interactivity also reflect the company’s 16 years of experience.</cite></b>
+            </figcaption>
+          </figure></i
+        >
+
+    
+  
+      <div class="container-fluid">
+
+        <div class="text-success"></div>
+
+        <hr class="border border-danger border-2 opacity-50" />
+
+        <i
+          ><figure class="text-center">
+            <blockquote class="blockquote">
+              <p>”Remember everything and tackle any project with your notes, tasks, and schedule all in one place.”</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+              <b> ”Designed by <cite title="Source Title">Vikas Gaddam”</cite></b>
+            </figcaption>
+          </figure></i
+        >
+
+        
+
+        <div class="text-success"></div>
+
+        <hr class="border border-danger border-2 opacity-50" />
+        
+        
+
+        <pre>
+            <form action="">
+                <input type="text" id="note-title" placeholder="Note title" />
+
+                <textarea id="note-text" placeholder="Note Details"></textarea>
+      
+                <button id="add-btn">Add Note</button>
+              </form>
+
+          </pre>
+      </div>
+      
+
+
+    </header>
+
+
+
+    <div class="text-success"></div>
+
+    <hr class="border border-danger border-2 opacity-50" />
+
+    <section>
+      <div class="container-fluid">
+       <i> <h2>Your Notes</h2></i>
+
+       <div class="text-success"></div>
+
+       <hr class="border border-danger border-2 opacity-50" />
+
+
+
+
+        <div id="notes">
+          <div class="note">
+            <p class="note-counter">Note ${index + 1}</p>
+            <h3 class="note-title">$element.title</h3>
+            <p class="note-text">$element.text</p>
+            <button class="note-btn">Delete Note</button>
+            <button class="note-btn edit-btn">Edit Note</button>
+            <button class="note-btn back-btn">Backup Note</button>
+            <button class="note-btn archive-btn">Archive Note</button>
+
+
+
+
+          </div>
+        </div>
+      </div>
+      
+    </section>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="web.js"></script>
+
+    <footer class="kilimanjaro_area">
+      <!-- Top Footer Area Start -->
+      <div class="foo_top_header_one section_padding_100_70">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="kilimanjaro_part">
+                <h5>About Us</h5>
+                <p>
+                    A good About Us page doesn't just tell the story behind a company—it shows it.
+
+                    Here are some other components you might want to incorporate into your About Us page to not only flesh out your narrative, but to define your brand and communicate your company's reason for being to customers.
+                </p>
+                <p>
+                  Our company is completely creative, clean & 100% responsive
+                  website. Put your business into next level with us.
+                </p>
+              </div>
+              <div class="kilimanjaro_part m-top-15">
+                <h5>Social Links</h5>
+                <ul class="kilimanjaro_social_links">
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-facebook" aria-hidden="true"></i>
+                      Facebook</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i>
+                      Twitter</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-pinterest" aria-hidden="true"></i>
+                      Pinterest</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-youtube" aria-hidden="true"></i>
+                      YouTube</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-linkedin" aria-hidden="true"></i>
+                      Linkedin</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="kilimanjaro_part">
+                <h5>Tags Widget</h5>
+                <ul class="kilimanjaro_widget">
+                  <li><a href="#">Classy</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Creative</a></li>
+                  <li><a href="#">One Page</a></li>
+                  <li><a href="#">Multipurpose</a></li>
+                  <li><a href="#">Minimal</a></li>
+                  <li><a href="#">Classic</a></li>
+                  <li><a href="#">Medical</a></li>
+                </ul>
+              </div>
+
+              <div class="kilimanjaro_part m-top-15">
+                <h5>Important Links</h5>
+                <ul class="kilimanjaro_links">
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-angle-right" aria-hidden="true"></i>Terms
+                      & Conditions</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-angle-right" aria-hidden="true"></i>About
+                      Licences</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-angle-right" aria-hidden="true"></i>Help
+                      & Support</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-angle-right" aria-hidden="true"></i
+                      >Careers</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-angle-right" aria-hidden="true"></i
+                      >Privacy Policy</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-angle-right" aria-hidden="true"></i
+                      >Community & Forum</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="kilimanjaro_part">
+                <h5>Latest News</h5>
+                <div class="kilimanjaro_blog_area">
+                  <div class="kilimanjaro_thumb">
+                    <img
+                      class="img-fluid"
+                      src="https://bestlifeonline.com/wp-content/uploads/sites/3/2017/08/business-colleagues-chatting-on-balcony.jpg?quality=82&strip=1&resize=800%2C450"
+                      alt=""
+                    />
+                  </div>
+                  <a href="#">'Make My Life Easier'</a>
+                  <p class="kilimanjaro_date">21 Jan 2018</p>
+                  <p>
+                    This is the little sister to the 'Best' headlines. If your
+                    customers are facing problems, they don't always want to
+                    know the best way to do something. Sometimes, they want to
+                    know the easiest way.
+                  </p>
+                </div>
+                <div class="kilimanjaro_blog_area">
+                  <div class="kilimanjaro_thumb">
+                    <img
+                      class="img-fluid"
+                      src="https://3.bp.blogspot.com/--C1wpaf_S4M/W7V__10nRoI/AAAAAAAAK24/1NSfapuYSIY0f0wzXY9NgoH0FjQLT07YACKgBGAs/s1600/maxresdefault.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <a href="#">'What We Do When...'</a>
+                  <p class="kilimanjaro_date">19 Feb 2018</p>
+                  <p>
+                    Transparency is a new paradigm in marketing. For years,
+                    companies have done all they could to keep their "secret
+                    sauce" hidden from the public. What companies have started
+                    to realize is, the real secret sauce is trust. And every
+                    company has access to it if they want it.
+                  </p>
+                </div>
+                <div class="kilimanjaro_blog_area">
+                  <div class="kilimanjaro_thumb">
+                    <img
+                      class="img-fluid"
+                      src="https://miro.medium.com/max/625/1*ukgyWHOibnZ0JL7qWD3bMA.jpeg"
+                      alt=""
+                    />
+                  </div>
+                  <a href="#">'Experience Has Taught Me Well'</a>
+                  <p class="kilimanjaro_date">10 May 2018</p>
+                  <p>
+                    These titles speak to the problems your target personas are
+                    facing and promise to deliver insight on how to deal with
+                    these problems.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="kilimanjaro_part">
+                <h5>Quick Contact</h5>
+                <div class="kilimanjaro_single_contact_info">
+                  <h5>Phone:</h5>
+                  <p>
+                    +255 255 54 53 52 <br />
+                    +255 255 53 52 51
+                  </p>
+                </div>
+                <div class="kilimanjaro_single_contact_info">
+                  <h5>Email:</h5>
+                  <p>
+                    support-in@flashdesk.com <br />
+                    flashnotes@1104email.com
+                  </p>
+                </div>
+              </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer Bottom Area Start -->
+      <div class="kilimanjaro_bottom_header_one section_padding_50 text-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p>
+                © All Rights Reserved by
+                <a href="#">Vikas Gaddam<i class="fa fa-love"></i></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
